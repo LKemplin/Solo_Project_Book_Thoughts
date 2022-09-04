@@ -1,7 +1,7 @@
 Name: Lynsey Kemplin
  Project Title: Book Thoughts
  Project Stack: MERN
- GitHub Repo Link: 
+ GitHub Repo Link: https://github.com/LKemplin/Solo_Project_Book_Thoughts
 
  Project Description: A website where users can rate and add their thoughts about the books they read.
  
