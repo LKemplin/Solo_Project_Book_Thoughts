@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Dashboard from './views/Dashboard';
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import {useState} from 'react';
+import AddThoughts from './views/AddThoughts';
+import Details from './views/Details';
 
 function App() {
+  const [bookCards, setBookCards] = useState([])
+
+  const removeFromList = (bookID) => {
+    const newBookCards = bookCards.filter((book) => {
+      return book._id !== bookID
+    })
+    setBookCards(newBookCards)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Navigate to='/bookthoughts/dashboard' />} />
+          <Route path="/bookthoughts/dashboard" element={<Dashboard bookCards={bookCards} setBookCards={setBookCards} default />} />
+          <Route path="/bookthoughts/add" element={<AddThoughts />} />
+          <Route path='/bookthoughts/details/:id' element={<Details bookCards={bookCards} setBookCards={setBookCards} removeFromList={removeFromList} />} />
+        </Routes>
+      </BrowserRouter>
+      
     </div>
   );
 }

@@ -2,7 +2,7 @@ const Book = require('../models/book.model');
 
 module.exports.addBook = (req, res) => {
     Book.create(req.body)
-    .then(pet => {
+    .then(book => {
         console.log(book)
         res.json(book)
     }).catch((err) => {
