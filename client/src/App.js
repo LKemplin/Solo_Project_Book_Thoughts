@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import {useState} from 'react';
 import AddThoughts from './views/AddThoughts';
 import Details from './views/Details';
+import EditPage from './views/EditPage';
 
 function App() {
   const [bookCards, setBookCards] = useState([])
@@ -23,6 +24,7 @@ function App() {
           <Route path="/bookthoughts/dashboard" element={<Dashboard bookCards={bookCards} setBookCards={setBookCards} default />} />
           <Route path="/bookthoughts/add" element={<AddThoughts />} />
           <Route path='/bookthoughts/details/:id' element={<Details bookCards={bookCards} setBookCards={setBookCards} removeFromList={removeFromList} />} />
+          <Route path='/bookthoughts/edit/:id' element={<EditPage />} />
         </Routes>
       </BrowserRouter>
       

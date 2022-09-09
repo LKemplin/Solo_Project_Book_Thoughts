@@ -31,7 +31,7 @@ module.exports.getBookbyID = (req, res) => {
 }
 
 module.exports.updateBook = (req, res) => {
-    Book.findOneAndUpdate({_id: req.params.id,}, req.body, {new:true})
+    Book.findOneAndUpdate({_id: req.params.id,}, req.body, {new: true, runValidators: true})
     .then((updatedBook) => {
         console.log(updatedBook)
         res.json(updatedBook)

@@ -36,8 +36,8 @@ const ReadOneThought = (props) => {
                     <p>Posted by: {book.posterName} on {new Date(book.createdAt).toLocaleDateString()}</p>
                     <p>Rating: {book.rating}</p>
                     <p>Thoughts: {book.thoughts}</p>
-                    <Link to='/bookthoughts/edit'><button className='btn m-2'>Edit</button></Link>
-                    <Link to='/bookthoughts/delete'>
+                    <Link to={`/bookthoughts/edit/${id}`}><button className='btn m-2'>Edit</button></Link>
+                    <Link to={`/bookthoughts/delete/${id}`}>
                         <button className='btn m-2' onClick={() => deleteHandler(book._id)}>Delete</button>
                     </Link>
                 </div>

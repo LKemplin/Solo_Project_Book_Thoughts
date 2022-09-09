@@ -13,7 +13,7 @@ const BookCard = (props) => {
         <div className='card-body'>
             <p className='card-text'>
                 <ul className='list-unstyled'>
-                    <li>Posted by: {bookCard.posterName} on {new Date(bookCard.createdAt).toLocaleDateString()}</li>
+                    <li>Posted by: {bookCard.posterName} on {new Date(bookCard.updatedAt).toLocaleDateString()}</li>
                     <li>Rating: {bookCard.rating}</li>
                 </ul>
             </p>
