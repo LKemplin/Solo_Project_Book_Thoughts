@@ -45,3 +45,18 @@ a:hover {
   background-color: transparent;
   border-top: 0px;
 }
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.on {
+  color: #000;
+}
+
+.off {
+  color: #ccc;
+}

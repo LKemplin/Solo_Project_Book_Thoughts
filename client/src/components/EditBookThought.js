@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useParams, useNavigate, Link} from 'react-router-dom';
+import StarRating from './StarRating';
 
 const EditBookThought = (props) => {
     const {id} = useParams();
@@ -72,9 +73,9 @@ const EditBookThought = (props) => {
                         <input type="text" value={posterName} className='form-control' onChange={(e) => setPosterName(e.target.value)} />
                     </div>
                     <div> 
-                        <label className='form-label'>Rate your book on a 1-5 scale, with 5 being the best thing ever and 1 being poop:</label>
+                        <label className='form-label'>How many stars would you give this book?</label>
                         {errors.rating && <p className='text-danger'>{errors.rating.message}</p>}
-                        <input type="number" value={rating} className='form-control' onChange={(e) => setRating(e.target.value)} />
+                        <StarRating rating={rating} setRating={setRating} />
                     </div>
                     <div>
                         <label className='form-label'>Thoughts:</label>
